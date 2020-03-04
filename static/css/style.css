@@ -1,0 +1,9 @@
+h1 {
+    color: #FCA205;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}

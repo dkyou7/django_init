@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block title %}- Index{% endblock %}
+
+{% block base %}
+{% if list %}
+    <div class="row">
+        {% for c in list %}
+        {% if c.img %}
+        <div class="card-img-top" style="width: 18rem;">
+            <p><img src= "{{c.img.url}}" class="card-img-top"></p>
+            <div class="card-body">
+                <h5 class="card-title">{{c.title}}</h5>
+                <p class="card-text">{{c.post}}</p>
+                <a href="#" class="btn btn-primary">{{c.pub_date}}</a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No post are available.!!</p>
+{% endif %}
+
+<a href="{% url 'create' %}">글쓰기</a>
+<a href="/">go to main</a>
+{% endblock %}
